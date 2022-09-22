@@ -1,20 +1,20 @@
 <?php
 /**
- * @copyright Copyright (c) 2020-2021 PuntoGAP
- * @link http://puntogap.com/
+ * @copyright Copyright (c) 2020-2022 Matías Müller
+ * @link https://github.com/matiasmuller
  * @license http://opensource.org/licenses/MIT MIT
  */
-namespace PuntoGAP\YiiConditions;
+namespace MatiasMuller\YiiConditions;
 
 use yii\helpers\Inflector;
 use MatiasMuller\MethodsStacks\StackableCall;
-use PuntoGAP\YiiConditions\ConditionsHandler;
+use MatiasMuller\YiiConditions\ConditionsHandler;
 
 /**
  * Conditions es el trait que se añade a las clases heredadas de
  * yii\base\ActiveQuery para añadirle la funcionalidad de Yii Conditions.
  *
- * @author Matías Müller <matias.muller@puntogap.com>
+ * @author Matías Müller <matias.muller@xxxxxxx.com>
  */
 trait Conditions
 {

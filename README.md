@@ -1,6 +1,6 @@
 # Yii Conditions
 
-[Yii Conditions](https://github.com/puntogap/yii-conditions) es una extensión para la clase de ActiveQuery de [Yii 2](https://www.yiiframework.com/) que permite reutilizar condiciones de consultas pre-armadas de forma modular siguiendo el principio DRY.
+[Yii Conditions](https://github.com/matiasmuller/yii-conditions) es una extensión para la clase de ActiveQuery de [Yii 2](https://www.yiiframework.com/) que permite reutilizar condiciones de consultas pre-armadas de forma modular siguiendo el principio DRY.
 
 ## Tabla de contenidos
 
@@ -34,7 +34,7 @@
 La forma recomendada para la instalación es a través de [Composer](http://getcomposer.org/download/).
 
 ```
-composer require puntogap/yii-conditions
+composer require matiasmuller/yii-conditions
 ```
 
 
@@ -84,7 +84,7 @@ namespace app\models;
 
 use Yii;
 use yii\db\ActiveQuery;
-use PuntoGAP\YiiConditions\Conditions;
+use MatiasMuller\YiiConditions\Conditions;
 
 class UsuarioQuery extends ActiveQuery
 {
@@ -126,7 +126,7 @@ namespace app\models;
 
 use Yii;
 use yii\db\ActiveQuery;
-use PuntoGAP\YiiConditions\Conditions;
+use MatiasMuller\YiiConditions\Conditions;
 
 class UsuarioQuery extends ActiveQuery
 {
@@ -171,7 +171,7 @@ namespace app\models;
 
 use Yii;
 use yii\db\ActiveQuery;
-use PuntoGAP\YiiConditions\Conditions;
+use MatiasMuller\YiiConditions\Conditions;
 
 class UsuarioQuery extends ActiveQuery
 {
@@ -222,7 +222,7 @@ namespace app\models;
 
 use Yii;
 use yii\db\ActiveQuery;
-use PuntoGAP\YiiConditions\Conditions;
+use MatiasMuller\YiiConditions\Conditions;
 
 class UsuarioQuery extends ActiveQuery
 {
@@ -392,7 +392,7 @@ namespace app\models;
 
 use Yii;
 use yii\db\ActiveQuery;
-use PuntoGAP\YiiConditions\Conditions;
+use MatiasMuller\YiiConditions\Conditions;
 
 class LocalidadQuery extends ActiveQuery
 {
@@ -605,7 +605,7 @@ namespace app\models;
 
 use Yii;
 use yii\db\ActiveQuery;
-use PuntoGAP\YiiConditions\Conditions;
+use MatiasMuller\YiiConditions\Conditions;
 
 class UsuarioQuery extends ActiveQuery
 {

@@ -1,10 +1,10 @@
 <?php
 /**
- * @copyright Copyright (c) 2020-2021 PuntoGAP
- * @link http://puntogap.com/
+ * @copyright Copyright (c) 2020-2022 Matías Müller
+ * @link https://github.com/matiasmuller
  * @license http://opensource.org/licenses/MIT MIT
  */
-namespace PuntoGAP\YiiConditions;
+namespace MatiasMuller\YiiConditions;
 
 use yii\db\ActiveQuery;
 
@@ -12,7 +12,7 @@ use yii\db\ActiveQuery;
  * ConditionsHandler es la clase que se encarga de gestionar las condiciones y sus
  * métodos virtuales correspondientes.
  *
- * @author Matías Müller <matias.muller@puntogap.com>
+ * @author Matías Müller <matias.muller@xxxxxxx.com>
  */
 class ConditionsHandler
 {
