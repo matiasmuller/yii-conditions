@@ -1,5 +1,5 @@
 {
-    "name": "puntogap/yii-conditions",
+    "name": "matiasmuller/yii-conditions",
     "type": "yii2-extension",
     "description": "Permite reutilizar condiciones de consultas pre-armadas de forma modular siguiendo el principio DRY.",
     "keywords": [
@@ -18,13 +18,13 @@
         "muller",
         "matiasmuller"
     ],
-    "homepage": "https://gitlab.com/puntogap/yii-conditions",
+    "homepage": "https://github.com/matiasmuller/yii-conditions",
     "license": "MIT",
     "authors": [
         {
             "name": "Matias Muller",
-            "email": "matias.muller@puntogap.com",
-            "homepage": "https://github.com/puntogap",
+            "email": "matias.muller@hotmail.com",
+            "homepage": "https://github.com/matiasmuller",
             "role": "Developer"
         }
     ],
@@ -34,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PuntoGAP\\YiiConditions\\": "src"
+            "MatiasMuller\\YiiConditions\\": "src"
         }
     },
     "config": {
