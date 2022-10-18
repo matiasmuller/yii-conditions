@@ -392,12 +392,18 @@ class ConditionsHandler
         $relationName = $conditionsWords = null;
         $n = count($words);
         $i = 1;
+        $nounFirst = $this->query->conditionRelationNameFirst();
         while ($i <= $n && !$relationName) {
-            $ucRelationName = implode('', array_slice($words, 0, $i));
+            $ucRelationName = implode('', $nounFirst
+                ? array_slice($words, 0, $i)
+                : array_slice($words, $n - $i, $n)
+            );
             $relationFn = "get$ucRelationName";
             if (method_exists($this->query->modelClass, $relationFn)) {
                 $relationName = lcfirst($ucRelationName);
-                $conditionsWords = array_slice($words, $i);
+                $conditionsWords = $nounFirst
+                    ? array_slice($words, $i)
+                    : array_slice($words, 0, $n - $i);
             } else {
                 $i++;
             }
