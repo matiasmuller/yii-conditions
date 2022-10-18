@@ -21,6 +21,17 @@ trait Conditions
     use StackableCall;
 
     /**
+     * Indica si al llamar una relación con condiciones en el método, se coloca
+     * el nombre de la relación primero, seguido de la/s condicion/es, o primero
+     * la/s condicion/es y luego la relación. Esto es conveniente para mejorar
+     * la sintaxis independientemente del idioma, como por ejemplo el español
+     * o el inglés, que ambos tienen estos órdenes invertidos.
+     *
+     * @return bool
+     */
+    public function conditionRelationNameFirst() { return false; }
+
+    /**
      * Token para comunicarse con ConditionsHandler, generado desde
      * static::getConditionsHandlerToken()
      *
