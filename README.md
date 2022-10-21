@@ -379,13 +379,23 @@ Como podemos ver, tantos las relaciones `hasOne` como `hasMany` son compatibles 
 
 #### Relación con condiciones en el método
 
-Añadiendo al llamado de la condición de relación pura una relación o sucesión de relaciones puras, siempre en formato _camel_case_, podemos también condicionar la propia relación a la que referimos en la consulta, conservando claridad y una fácil legibilidad en el código. 
+Añadiendo al llamado de la condición de relación pura una relación o sucesión de relaciones puras, siempre en formato _camel_case_, podemos también condicionar la propia relación a la que referimos en la consulta, conservando claridad y una fácil legibilidad en el código.
+
+```php
+Foo::find()->withOneConditionAnotherConditionBar()->all();
+```
+
+o bien:
 
 ```php
 Foo::find()->withBarOneConditionAnotherCondition()->all();
 ```
 
-Anteriormente veíamos como consultabamos a usuarios si tenían localidad asignada. Esta consulta es más que probable que sea redundante ya que lo más usual es que cada usuario tenga obligatoriamente una localidad asignada. Sin embargo, podríamos tener el siguiente escenario:
+según se configure la función ´conditionRelationNameFirst()´ en el modelo de consulta en donde se definan estas condiciones. 
+
+> Esta configuración es útil para conservar la sintaxis "humana" independientemente del idioma. La configuración por defecto, con nombre de condición de relación primero, encaja bien con el idioma inglés (ej: ´->withActiveUsers()´), mientras que la opción contrapuesta es más apropiada para el idioma español (ej: ´->withUsuariosActivos´).
+
+En un ejemplo anterior de relaciones puras, veíamos cómo consultábamos a usuarios si tenían localidad asignada. Esta consulta es más que probable que sea redundante ya que lo más usual es que cada usuario tenga obligatoriamente una localidad asignada. Sin embargo, podríamos tener el siguiente escenario:
 
 ```php
 namespace app\models;
@@ -410,6 +420,22 @@ class LocalidadQuery extends ActiveQuery
 Esta condición nos permite obtener las localidades "activas" mediante `Localidad::find()->activas()->all()` como ya hemos visto. Pero también nos da automáticamente la posibilidad de consultar los usuarios que pertenecen a localidades activas siguiendo el criterio mencionado anteriormente de encadenar al nombre de la relación, el nombre de la condición "activas" con la notación _camel_case_ de la siguiente manera:
 
 ```php
+namespace app\models;
+
+use Yii;
+use yii\db\ActiveQuery;
+use MatiasMuller\YiiConditions\Conditions;
+
+class UsuarioQuery extends ActiveQuery
+{
+    use Conditions;
+
+    // Definido para que el orden de parseo sea compatible con el idioma español
+    public function conditionRelationNameFirst() { return true; }
+
+    // ...
+}
+
 // Devuelve los usuarios pertenecientes a localidades activas
 Usuario::find()->withLocalidadActivas()->all(); 
 ```
